@@ -1,0 +1,15 @@
+{
+    "name": "aws-ecr-cleaner",
+    "description": "Removes unused Docker images from Amazon ECR.",
+    "tags": ["aws", "devops"],
+    "license": "MIT",
+    "author": "",
+    "email": "",
+    "archive": "output.zip",
+    "buildCommand": "cd main && npm install",
+    "readme": "README.md",
+    "branch": "master",
+    "aws": {
+        "policyFiles": []
+    }
+}
