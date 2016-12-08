@@ -21,21 +21,21 @@ module.exports.handler = function(event, context) {
 
   if(!process.env.REPO_REGION){
     console.warn('WARN: NO REPO_REGION, defaulting to us-east-1');
-    process.env.AWS_REGION = 'us-east-1';
+    process.env.REPO_REGION = 'us-east-1';
   }
 
   if(!process.env.ECS_REGION){
     console.warn('WARN: NO ECS_REGION, defaulting to us-east-1');
-    process.env.AWS_REGION = 'us-east-1';
+    process.env.ECS_REGION = 'us-east-1';
   }
 
   if(!process.env.REPO_AGE_THRESHOLD){
     console.warn('WARN: NO REPO_AGE_THRESHOLD, defaulting to 90 days');
-    process.env.AWS_REGION = 90;
+    process.env.REPO_AGE_THRESHOLD = 90;
   }
 
   if(!process.env.REPO_TO_CLEAN){
-    console.error('WARN: NO REPO_TO_CLEAN, defaulting to us-east-1');
+    console.error('ERROR: NO REPO_TO_CLEAN, must be set');
     return context.fail(new Error('Must set REPO_TO_CLEAN'));
   }
 
